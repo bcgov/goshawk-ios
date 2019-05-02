@@ -12,7 +12,7 @@ import WebKit
 import AVKit
 
 class  ActiveorInactiveController: NestsViewController {
-    
+
     @IBOutlet weak var imageSeven: UIImageView!
     @IBOutlet weak var imageSix: UIImageView!
     @IBOutlet weak var imageFive: UIImageView!
@@ -20,7 +20,7 @@ class  ActiveorInactiveController: NestsViewController {
     @IBOutlet weak var imageThree: UIImageView!
     @IBOutlet weak var imageTwo: UIImageView!
     @IBOutlet weak var imageOne: UIImageView!
-    
+
     var tapImageOne =  UITapGestureRecognizer()
     var tapImageTwo =  UITapGestureRecognizer()
     var tapImageThree =  UITapGestureRecognizer()
@@ -28,27 +28,26 @@ class  ActiveorInactiveController: NestsViewController {
     var tapImageFive =  UITapGestureRecognizer()
     var tapImageSix =  UITapGestureRecognizer()
     var tapImageSeven =  UITapGestureRecognizer()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setImageGesture()
     }
-    
+
     @IBAction func buttonAction(_ sender: Any) {
-        if let path =  Bundle.main.path(forResource: "Chicks in nest", ofType: "mp4"){
+        if let path =  Bundle.main.path(forResource: "Chicks in nest", ofType: "mp4") {
             let item = AVPlayerItem(url: URL(fileURLWithPath: path))
             let video = AVPlayer(playerItem: item)
             video.seek(to: CMTimeMake(40, 1))
             item.forwardPlaybackEndTime = CMTimeMake(65, 1)
             let playerViewController = AVPlayerViewController()
             playerViewController.player = video
-            
+
             present(playerViewController, animated: true, completion: {
                 video.play()
             })
-        }        
+        }
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageOne.addGestureRecognizer(tapImageOne)

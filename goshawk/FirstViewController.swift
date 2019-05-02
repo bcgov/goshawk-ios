@@ -15,9 +15,9 @@ class FirstViewController: BaseViewController {
     @IBOutlet weak var immatureView: UIView!
     @IBOutlet weak var youngView: UIView!
     @IBOutlet weak var coastalView: UIView!
-    @IBOutlet weak var speciesView: UIView!    
+    @IBOutlet weak var speciesView: UIView!
     @IBOutlet weak var valueChanged: UISegmentedControl!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,16 +27,15 @@ class FirstViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
 
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
         let segIndex = valueChanged.selectedSegmentIndex
-        
-        switch segIndex
-        {
+
+        switch segIndex {
         case 0:
             self.initialPage.isHidden = false
             self.adultTabView.isHidden = true
@@ -44,7 +43,6 @@ class FirstViewController: BaseViewController {
             self.youngView.isHidden = true
             self.coastalView.isHidden = true
             self.speciesView.isHidden = true
-            break
         case 1:
             self.initialPage.isHidden = true
             self.adultTabView.isHidden = false
@@ -52,7 +50,6 @@ class FirstViewController: BaseViewController {
             self.youngView.isHidden = true
             self.coastalView.isHidden = true
             self.speciesView.isHidden = true
-            break
         case 2:
             self.initialPage.isHidden = true
             self.adultTabView.isHidden = true
@@ -60,7 +57,6 @@ class FirstViewController: BaseViewController {
             self.youngView.isHidden = true
             self.coastalView.isHidden = true
             self.speciesView.isHidden = true
-            break
         case 3:
             self.initialPage.isHidden = true
             self.adultTabView.isHidden = true
@@ -68,7 +64,6 @@ class FirstViewController: BaseViewController {
             self.youngView.isHidden = false
             self.coastalView.isHidden = true
             self.speciesView.isHidden = true
-            break
         case 4:
             self.initialPage.isHidden = true
             self.adultTabView.isHidden = true
@@ -76,7 +71,6 @@ class FirstViewController: BaseViewController {
             self.youngView.isHidden = true
             self.coastalView.isHidden = false
             self.speciesView.isHidden = true
-            break
         case 5:
             self.initialPage.isHidden = true
             self.adultTabView.isHidden = true
@@ -84,11 +78,8 @@ class FirstViewController: BaseViewController {
             self.youngView.isHidden = true
             self.coastalView.isHidden = true
             self.speciesView.isHidden = false
-            break
         default:
             break
         }
     }
-    
 }
-

@@ -16,10 +16,10 @@ class EggshellController: SignsViewController {
     @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var imageOne: UIImageView!
     @IBOutlet weak var textView: UITextView!
-    
+
     var tapImageOne =  UITapGestureRecognizer()
     var tapImageTwo =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))

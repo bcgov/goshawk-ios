@@ -9,18 +9,16 @@
 import Foundation
 import UIKit
 
-class InitialHabitatController:HabitatViewController {
-    
+class InitialHabitatController: HabitatViewController {
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
-    
+
     var  tapOne = UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tapOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageView.addGestureRecognizer(tapOne)
     }
-    
-
 }

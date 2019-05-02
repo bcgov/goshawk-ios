@@ -9,19 +9,19 @@
 import Foundation
 import  UIKit
 
-class BCController:SecondViewController{
-    
+class BCController: SecondViewController {
+
     @IBOutlet weak var secondImage: UIImageView!
     @IBOutlet weak var firstImage: UIImageView!
     @IBOutlet weak var textView1: UITextView!
     @IBOutlet weak var secondText: UITextView!
-    
+
     var tapOne = UITapGestureRecognizer()
     var tapTwo = UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tapOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         firstImage.addGestureRecognizer(tapOne)
         tapTwo.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class PelletsController: SignsViewController {
-    
+
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var thirdimage: UIImageView!
     @IBOutlet weak var secondDesc: UITextView!
@@ -18,11 +18,11 @@ class PelletsController: SignsViewController {
     @IBOutlet weak var firstImage: UIImageView!
     @IBOutlet weak var secondImage: UIImageView!
     @IBOutlet weak var textView: UITextView!
-    
+
     var tapImageOne =  UITapGestureRecognizer()
     var tapImageTwo =  UITapGestureRecognizer()
     var tapImageThree =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))

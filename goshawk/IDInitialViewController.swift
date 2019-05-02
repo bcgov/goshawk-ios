@@ -12,24 +12,24 @@ import WebKit
 import AVKit
 
 class IDInitialViewController: FirstViewController, WKUIDelegate {
-    
+
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var webView: WKWebView!
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var secondImage: UIImageView!
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var firstImage: UIImageView!
-    
+
     @IBOutlet var imageTwoTap: UITapGestureRecognizer!
     @IBOutlet var imageOneTap: UITapGestureRecognizer!
-    
+
     // Create an instance of AVAudioPlayer
     var videoPlayer: AVPlayer!
-    
-    func playVideo(fileName: String, fileExtension: String) -> Void {
+
+    func playVideo(fileName: String, fileExtension: String) {
         let videoURL: URL!
         videoURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
-        
+
         if videoURL == nil {
             print("Requested Video Cannot be Played")
         } else {
@@ -41,10 +41,10 @@ class IDInitialViewController: FirstViewController, WKUIDelegate {
             }
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         imageOneTap.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         firstImage.addGestureRecognizer(imageOneTap)
         imageTwoTap.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
@@ -55,6 +55,4 @@ class IDInitialViewController: FirstViewController, WKUIDelegate {
     @IBAction func playVideoButton(_ sender: Any) {
         playVideo(fileName: "id_1", fileExtension: "mp4")
     }
-
-    
 }

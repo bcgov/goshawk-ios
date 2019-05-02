@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import AVKit
 
-class AdultIDViewController : FirstViewController {
-    
+class AdultIDViewController: FirstViewController {
+
     @IBOutlet weak var imageEigtheen: UIImageView!
     @IBOutlet weak var imageSeventeen: UIImageView!
     @IBOutlet weak var imageSixteen: UIImageView!
@@ -30,7 +30,7 @@ class AdultIDViewController : FirstViewController {
     @IBOutlet weak var imageThree: UIImageView!
     @IBOutlet weak var imageTwo: UIImageView!
     @IBOutlet weak var imageOne: UIImageView!
-    
+
     var tapImageOne =  UITapGestureRecognizer()
     var tapImageTwo =  UITapGestureRecognizer()
     var tapImageThree =  UITapGestureRecognizer()
@@ -49,18 +49,18 @@ class AdultIDViewController : FirstViewController {
     var tapImageSixteen =  UITapGestureRecognizer()
     var tapImageSeventeen =  UITapGestureRecognizer()
     var tapImageEighteen =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setImageGesture()
 
     }
-    
-    func playVideo(fileName: String, fileExtension: String) -> Void {
+
+    func playVideo(fileName: String, fileExtension: String) {
         let videoURL: URL!
         videoURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
-        
+
         if videoURL == nil {
             print("Requested Video Cannot be Played")
         } else {
@@ -72,7 +72,7 @@ class AdultIDViewController : FirstViewController {
             }
         }
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageOne.addGestureRecognizer(tapImageOne)
@@ -110,9 +110,8 @@ class AdultIDViewController : FirstViewController {
         imageSeventeen.addGestureRecognizer(tapImageSeventeen)
         tapImageEighteen.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageEigtheen.addGestureRecognizer(tapImageEighteen)
-    
     }
-    
+
     @IBAction func playVideoOne(_ sender: Any) {
         playVideo(fileName: "id_2", fileExtension: "mov")
     }

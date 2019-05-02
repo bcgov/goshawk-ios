@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ImmatureIDViewController: FirstViewController {
-    
+
     @IBOutlet weak var imageSixteen: UIImageView!
     @IBOutlet weak var imageFifteen: UIImageView!
     @IBOutlet weak var imageFourteen: UIImageView!
@@ -27,7 +27,7 @@ class ImmatureIDViewController: FirstViewController {
     @IBOutlet weak var imageThree: UIImageView!
     @IBOutlet weak var imageTwo: UIImageView!
     @IBOutlet weak var imageOne: UIImageView!
-    
+
     var tapImageOne =  UITapGestureRecognizer()
     var tapImageTwo =  UITapGestureRecognizer()
     var tapImageThree =  UITapGestureRecognizer()
@@ -44,12 +44,12 @@ class ImmatureIDViewController: FirstViewController {
     var tapImageFourteen =  UITapGestureRecognizer()
     var tapImageFifteen =  UITapGestureRecognizer()
     var tapImageSixteen =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setImageGesture()
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageOne.addGestureRecognizer(tapImageOne)

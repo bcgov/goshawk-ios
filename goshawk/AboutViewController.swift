@@ -13,44 +13,39 @@ class AboutViewController: BaseViewController {
     @IBOutlet weak var developerView: UIView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var photoView: UIView!
-    @IBOutlet weak var govView: UIView!    
+    @IBOutlet weak var govView: UIView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
     @IBAction func valueChanged(_ sender: Any) {
         let segIndex = segmentControl.selectedSegmentIndex
-        
+
         switch segIndex {
         case 0:
             self.developerView.isHidden = false
             self.contentView.isHidden = true
             self.photoView.isHidden = true
             self.govView.isHidden = true
-            break
         case 1:
             self.developerView.isHidden = true
             self.contentView.isHidden = false
             self.photoView.isHidden = true
             self.govView.isHidden = true
-            break
         case 2:
             self.developerView.isHidden = true
             self.contentView.isHidden = true
             self.photoView.isHidden = false
             self.govView.isHidden = true
-            break
         case 3:
             self.developerView.isHidden = true
             self.contentView.isHidden = true
             self.photoView.isHidden = true
             self.govView.isHidden = false
-            break
         default:
             break
         }

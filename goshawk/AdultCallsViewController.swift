@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class AdultCallsViewController : CallsViewController {
-    
+class AdultCallsViewController: CallsViewController {
+
     @IBOutlet weak var audioChuppVanIsland: UIButton!
     @IBOutlet weak var textViewFour: UITextView!
     @IBOutlet weak var headerThree: UITextView!
@@ -25,30 +25,28 @@ class AdultCallsViewController : CallsViewController {
     @IBOutlet weak var headerOne: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
-    
+
     var audioPlayerforHG = AVAudioPlayer()
     var audioPlayerforVI = AVAudioPlayer()
     var audioPlayerforIS = AVAudioPlayer()
     var audioPlayerforWail = AVAudioPlayer()
     var audioPlayerforChupp = AVAudioPlayer()
-    
+
     var tapImageOne  = UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageView.addGestureRecognizer(tapImageOne)
-        
-       // let soundHG = Bundle.main.path(forResource: "NOGO Adult alarm call (HG)", ofType: "mp3")
         let soundVI = Bundle.main.path(forResource: "NOGO Adult alarm (VI)", ofType: "m4a")
         let soundIS = Bundle.main.path(forResource: "NOGO Adult alarm call (Interior)", ofType: "mp3")
         let soundWail = Bundle.main.path(forResource: "NOGO Adult female wail", ofType: "m4a")
         let soundChupp = Bundle.main.path(forResource: "NOGO Adult Chupp call", ofType: "m4a")
-        
-        do{
-            //audioPlayerforHG = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundHG!))
-            audioPlayerforHG = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "NOGO Adult alarm call (HG)", ofType: "mp3")!))
+
+        do {
+            audioPlayerforHG = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(
+                forResource: "NOGO Adult alarm call (HG)", ofType: "mp3")!))
             audioPlayerforHG.prepareToPlay()
             audioPlayerforVI = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundVI!))
             audioPlayerforVI.prepareToPlay()
@@ -58,51 +56,48 @@ class AdultCallsViewController : CallsViewController {
             audioPlayerforWail.prepareToPlay()
             audioPlayerforChupp = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundChupp!))
             audioPlayerforChupp.prepareToPlay()
-        }
-        catch{
+        } catch {
             print(error)
         }
     }
-    
-    
+
     @IBAction func audioHaidaPressed(_ sender: Any) {
-        if audioPlayerforHG.isPlaying{
+        if audioPlayerforHG.isPlaying {
             audioPlayerforHG.stop()
-        }else {            
+        } else {
             audioPlayerforHG.play()
         }
     }
-    
+
     @IBAction func audioChupp(_ sender: Any) {
-        if audioPlayerforChupp.isPlaying{
+        if audioPlayerforChupp.isPlaying {
             audioPlayerforChupp.stop()
-        }else {
+        } else {
             audioPlayerforChupp.play()
         }
     }
-    
+
     @IBAction func audioWail(_ sender: Any) {
-        if audioPlayerforWail.isPlaying{
+        if audioPlayerforWail.isPlaying {
             audioPlayerforWail.stop()
-        }else {
+        } else {
             audioPlayerforWail.play()
         }
     }
-    
+
     @IBAction func audioVanIsland(_ sender: Any) {
-        if audioPlayerforVI.isPlaying{
+        if audioPlayerforVI.isPlaying {
             audioPlayerforVI.stop()
-        }else{
+        } else {
             audioPlayerforVI.play()
         }
     }
-    
+
     @IBAction func audioInterior(_ sender: Any) {
-        if audioPlayerforIS.isPlaying{
+        if audioPlayerforIS.isPlaying {
             audioPlayerforIS.stop()
-        }else{
+        } else {
             audioPlayerforIS.play()
         }
     }
-    
 }

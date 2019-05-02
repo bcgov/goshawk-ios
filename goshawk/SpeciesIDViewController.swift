@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class SpeciesIDViewController: FirstViewController {
-    
+
     @IBOutlet weak var image36: UIImageView!
     @IBOutlet weak var image35: UIImageView!
     @IBOutlet weak var image34: UIImageView!
@@ -83,12 +83,12 @@ class SpeciesIDViewController: FirstViewController {
     var tapImage34 =  UITapGestureRecognizer()
     var tapImage35 =  UITapGestureRecognizer()
     var tapImage36 =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setImageGesture()
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageOne.addGestureRecognizer(tapImageOne)

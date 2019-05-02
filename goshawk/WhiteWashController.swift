@@ -18,11 +18,11 @@ class  WhiteWashController: SignsViewController {
     @IBOutlet weak var labelone: UILabel!
     @IBOutlet weak var imageView1: UIImageView!
     @IBOutlet weak var textView: UITextView!
-    
+
     var tapImageOne =  UITapGestureRecognizer()
     var tapImageTwo =  UITapGestureRecognizer()
     var tapImageThree =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))

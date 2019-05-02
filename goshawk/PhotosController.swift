@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class  PhotosController: NestsViewController {
-   
+
     @IBOutlet weak var image32: UIImageView!
     @IBOutlet weak var image31: UIImageView!
     @IBOutlet weak var image30: UIImageView!
@@ -75,12 +75,12 @@ class  PhotosController: NestsViewController {
     var tapImage30 =  UITapGestureRecognizer()
     var tapImage31 =  UITapGestureRecognizer()
     var tapImage32 =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setImageGesture()
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageOne.addGestureRecognizer(tapImageOne)

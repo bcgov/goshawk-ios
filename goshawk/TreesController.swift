@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class  TreesController: NestsViewController {
-    
 
     @IBOutlet weak var image31: UIImageView!
     @IBOutlet weak var image30: UIImageView!
@@ -74,12 +73,12 @@ class  TreesController: NestsViewController {
     var tapImage29 =  UITapGestureRecognizer()
     var tapImage30 =  UITapGestureRecognizer()
     var tapImage31 =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setImageGesture()
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageOne.addGestureRecognizer(tapImageOne)

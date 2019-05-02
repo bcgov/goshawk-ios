@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class YoungCallViewController : CallsViewController {
-    
+class YoungCallViewController: CallsViewController {
+
     @IBOutlet weak var audioAlarmCall: UIButton!
     @IBOutlet weak var subTextViewTwo: UITextView!
     @IBOutlet weak var headerTwo: UITextView!
@@ -21,41 +21,40 @@ class YoungCallViewController : CallsViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
-    
+
     var audioPlayerforalarm = AVAudioPlayer()
     var audioPlayerforbegging = AVAudioPlayer()
     var tapImageOne = UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageView.addGestureRecognizer(tapImageOne)
-        
+
         let soundalarm = Bundle.main.path(forResource: "NOGO Juvenile alarm", ofType: "mp3")
         let soundbegging = Bundle.main.path(forResource: "NOGO Juvenile begging", ofType: "mp3")
-        
-        do{
+
+        do {
             audioPlayerforalarm = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundalarm!))
             audioPlayerforbegging = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: soundbegging!))
-        }
-        catch{
+        } catch {
             print(error)
         }
     }
-    
+
     @IBAction func beggingCallPressed(_ sender: Any) {
-        if audioPlayerforbegging.isPlaying{
+        if audioPlayerforbegging.isPlaying {
             audioPlayerforbegging.stop()
-        }else {
+        } else {
             audioPlayerforbegging.play()
         }
     }
-    
+
     @IBAction func alarmCallPressed(_ sender: Any) {
-        if audioPlayerforalarm.isPlaying{
+        if audioPlayerforalarm.isPlaying {
             audioPlayerforalarm.stop()
-        }else {
+        } else {
             audioPlayerforalarm.play()
         }
     }

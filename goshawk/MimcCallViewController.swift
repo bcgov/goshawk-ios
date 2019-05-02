@@ -9,23 +9,23 @@
 import Foundation
 import UIKit
 
-class MimcCallViewController : CallsViewController {
+class MimcCallViewController: CallsViewController {
     
     @IBOutlet weak var labelthree: UILabel!
     @IBOutlet weak var imageThree: UIImageView!
     @IBOutlet weak var labelTwo: UILabel!
     @IBOutlet weak var imageTwo: UIImageView!
-    @IBOutlet weak var LabelOne: UILabel!
+    @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var imageOne: UIImageView!
     @IBOutlet weak var textView: UITextView!
-    
+
     var tapImageOne = UITapGestureRecognizer()
     var tapImageTwo = UITapGestureRecognizer()
     var tapImageThree = UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageOne.addGestureRecognizer(tapImageOne)
         tapImageTwo.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))

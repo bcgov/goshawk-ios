@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class NestingController:HabitatViewController {
-    
+class NestingController: HabitatViewController {
+
     @IBOutlet weak var secondHeader: UITextView!
     @IBOutlet weak var lastText: UITextView!
     @IBOutlet weak var fifthImage: UIImageView!
@@ -26,19 +26,17 @@ class NestingController:HabitatViewController {
     @IBOutlet weak var secondText: UITextView!
     @IBOutlet weak var firstImage: UIImageView!
     @IBOutlet weak var firstText: UITextView!
-    
     var tapImageOne =  UITapGestureRecognizer()
     var tapImageTwo =  UITapGestureRecognizer()
     var tapImageThree =  UITapGestureRecognizer()
     var tapImageFour =  UITapGestureRecognizer()
     var tapImageFive =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setImageGesture()
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         firstImage.addGestureRecognizer(tapImageOne)
@@ -51,5 +49,4 @@ class NestingController:HabitatViewController {
         tapImageFive.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         fifthImage.addGestureRecognizer(tapImageFive)
     }
-    
 }

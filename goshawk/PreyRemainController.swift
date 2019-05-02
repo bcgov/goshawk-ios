@@ -32,14 +32,14 @@ class  PreyRemainController: SignsViewController {
     @IBOutlet weak var sixthDesc: UITextView!
     @IBOutlet weak var seventhDesc: UITextView!
     @IBOutlet weak var eightDesc: UITextView!
-    @IBOutlet weak var ninthDesc: UITextView!    
+    @IBOutlet weak var ninthDesc: UITextView!
     @IBOutlet weak var lastDesc: UITextView!
     @IBOutlet weak var lastImage: UIImageView!
     @IBOutlet weak var redSquirrelHeader: UITextView!
     @IBOutlet weak var tenthDesc: UITextView!
     @IBOutlet weak var grouseHeader: UITextView!
     @IBOutlet weak var jaysHeader: UITextView!
-    
+
     var tapImageOne =  UITapGestureRecognizer()
     var tapImageTwo =  UITapGestureRecognizer()
     var tapImageThree =  UITapGestureRecognizer()
@@ -51,12 +51,12 @@ class  PreyRemainController: SignsViewController {
     var tapImageNine =  UITapGestureRecognizer()
     var tapImageTen =  UITapGestureRecognizer()
     var tapImageEleven =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setImageGesture()
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         firstImage.addGestureRecognizer(tapImageOne)

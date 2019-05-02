@@ -12,7 +12,7 @@ import UIKit
 class  PluckingController: SignsViewController {
     
     @IBOutlet weak var largeDesc: UITextView!
-    
+
     @IBOutlet weak var lastLabel: UILabel!
     @IBOutlet weak var lastImage: UIImageView!
     @IBOutlet weak var fourthLabel: UILabel!
@@ -23,18 +23,18 @@ class  PluckingController: SignsViewController {
     @IBOutlet weak var secondImage: UIImageView!
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var firstImage: UIImageView!
-    
+
     var tapImageOne =  UITapGestureRecognizer()
     var tapImageTwo =  UITapGestureRecognizer()
     var tapImageThree =  UITapGestureRecognizer()
     var tapImageFour =  UITapGestureRecognizer()
     var tapImageFive =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setImageGesture()
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         firstImage.addGestureRecognizer(tapImageOne)

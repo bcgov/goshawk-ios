@@ -30,7 +30,7 @@ class  MoultedFeatherController: SignsViewController {
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var firstDesc: UITextView!
-    
+
     var tapImageOne =  UITapGestureRecognizer()
     var tapImageTwo =  UITapGestureRecognizer()
     var tapImageThree =  UITapGestureRecognizer()
@@ -39,12 +39,12 @@ class  MoultedFeatherController: SignsViewController {
     var tapImageSix =  UITapGestureRecognizer()
     var tapImageSeven =  UITapGestureRecognizer()
     var tapImageEight =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setImageGesture()
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         image1.addGestureRecognizer(tapImageOne)

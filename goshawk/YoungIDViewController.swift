@@ -11,7 +11,7 @@ import UIKit
 import AVKit
 
 class YoungIDViewController: FirstViewController {
-    
+
     @IBOutlet weak var imageFifteen: UIImageView!
     @IBOutlet weak var imageFourteen: UIImageView!
     @IBOutlet weak var imageThirthteen: UIImageView!
@@ -43,29 +43,27 @@ class YoungIDViewController: FirstViewController {
     var tapImageThirthteen =  UITapGestureRecognizer()
     var tapImageFourteen =  UITapGestureRecognizer()
     var tapImageFifteen =  UITapGestureRecognizer()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setImageGesture()
-        
     }
-    
+
     @IBAction func buttonAction(_ sender: Any) {
-        if let path =  Bundle.main.path(forResource: "Chicks in nest", ofType: "mp4"){
+        if let path =  Bundle.main.path(forResource: "Chicks in nest", ofType: "mp4") {
             let item = AVPlayerItem(url: URL(fileURLWithPath: path))
             let video = AVPlayer(playerItem: item)
             video.seek(to: CMTimeMake(0, 1))
             item.forwardPlaybackEndTime = CMTimeMake(40, 1)
             let playerViewController = AVPlayerViewController()
             playerViewController.player = video
-            
+
             present(playerViewController, animated: true, completion: {
                 video.play()
             })
         }
     }
-    
+
     private func setImageGesture() {
         tapImageOne.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageOne.addGestureRecognizer(tapImageOne)
@@ -97,13 +95,12 @@ class YoungIDViewController: FirstViewController {
         imageFourteen.addGestureRecognizer(tapImageFourteen)
         tapImageFifteen.addTarget(self, action: #selector(BaseViewController.imageTapped(_:)))
         imageFifteen.addGestureRecognizer(tapImageFifteen)
-        
     }
-    
-    func playVideo(fileName: String, fileExtension: String) -> Void {
+
+    func playVideo(fileName: String, fileExtension: String) {
         let videoURL: URL!
         videoURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension)
-        
+
         if videoURL == nil {
             print("Requested Video Cannot be Played")
         } else {
@@ -115,7 +112,7 @@ class YoungIDViewController: FirstViewController {
             }
         }
     }
-    
+
     @IBAction func playVideoOne(_ sender: Any) {
         playVideo(fileName: "id_4", fileExtension: "mp4")
     }

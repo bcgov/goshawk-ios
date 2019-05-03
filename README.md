@@ -1,6 +1,6 @@
 # goshawk-ios
 
-###North American Goshawk iOS Application
+### North American Goshawk iOS Application
 
 Goshawk-ios is an iOS application designed to aid users in identifying Goshawks and Goshawk habitat in the wild.
 
